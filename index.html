@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Mowo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5">
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+    	* {
+    		padding: 0;
+    		margin: 0;
+            text-align: justify;
+            font-family: 'Roboto Slab', serif;
+            line-height: 1.6;
+    	}
+        body {
+            background: gainsboro;
+        }
+    	#container{
+    		display: flex;
+            flex-direction: column;
+    		justify-content: center;
+    		align-items: center;
+    		margin: 0 auto;
+            padding: 50px;
+            box-sizing: border-box;
+    		height: 100%;
+            letter-spacing: normal;
+    	}
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .selected {
+            color: red;
+        }
+
+
+        #content {
+            margin-top: 110px;
+        }
+        
+        #content h1{
+             text-align: center;
+             font-size: 60px;
+        }
+
+        #content p{
+             font-size: 18px;
+        }
+
+        @media (min-width:320px)  {
+            #container{
+                width: 100%;
+                padding: 20px;
+            }
+
+            #content {
+                margin-top: 80px;
+            }
+        }
+
+        @media (min-width:961px)  {
+            #container{
+                width: 500px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <nav>
+            <a id="a" class="selected">A</a> \
+            <a id="b">Be</a> \
+            <a id="c">Ce</a>
+        </nav>
+
+        <div id="content">
+            <h1>Hallo!</h1><br>
+            <p>Aku Nabila Fikri. Nama pemberian Orang Tua yang dicatat dalam dokumen resmi pencatatan sipil. Lahir 24 tahun yang lalu. Suka dengan dunia pemrograman tapi lebih suka kamu. Ok. Selamat datang dalam duniaku!</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function push(event) {
+            console.log('sd')
+            // let id = event.target.id;
+            // window.history.pushState({id}, '${id}', '/page/${id}');
+        }
+        window.onload = event => {
+            document.getElementById('a').addEventListener('click', () => {
+                event => push(event)
+            })
+        }
+    </script>
+</body>
+
+</html>
