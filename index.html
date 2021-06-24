@@ -1,102 +1,143 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Mowo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5">
-    <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-    	* {
-    		padding: 0;
-    		margin: 0;
-            text-align: justify;
-            font-family: 'Roboto Slab', serif;
-            line-height: 1.6;
-    	}
-        body {
-            background: gainsboro;
-        }
-    	#container{
-    		display: flex;
-            flex-direction: column;
-    		justify-content: center;
-    		align-items: center;
-    		margin: 0 auto;
-            padding: 50px;
-            box-sizing: border-box;
-    		height: 100%;
-            letter-spacing: normal;
-    	}
+	<meta charset="utf-8">
+	<!-- <meta http-equiv="refresh" content="2"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hi+Melody&family=Just+Me+Again+Down+Here&family=Reenie+Beanie&family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
 
-        a {
-            text-decoration: none;
-            color: #000;
-        }
-
-        .selected {
-            color: red;
-        }
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hi+Melody&family=Just+Me+Again+Down+Here&family=Reenie+Beanie&family=Sue+Ellen+Francisco&display=swap');
+		* {
+			margin: 0;
+			padding: 0;
+		}
 
 
-        #content {
-            margin-top: 110px;
-        }
-        
-        #content h1{
-             text-align: center;
-             font-size: 60px;
-        }
+		.container {
+			width: 100%;
+			background-color: #f9f9f9;
+		}
+		@media only screen and (min-width: 768px) {
+			.container {
+				width: 40%;
+				margin: 0 auto;
+			}
+		}
 
-        #content p{
-             font-size: 18px;
-        }
+		header {
+			position: fixed;
+			top: 0;
+			font-family: 'Bebas Neue', cursive;
+			height: 40px;
+			width: 100%;
+			line-height: 2.9rem;
+			font-size: 32px;
+			line-spacing: 1px;
+			background-color: #111;
+			color: #f9f9f9;
+			text-align: center;
+		}
+		@media only screen and (min-width: 768px) {
+			header {
+				width: 40%;
+			}
+		}
 
-        @media (min-width:320px)  {
-            #container{
-                width: 100%;
-                padding: 20px;
-            }
+		.content {
+			/*height: 1200px;*/
+			margin-top: 40px;
+		}
 
-            #content {
-                margin-top: 80px;
-            }
-        }
+		.subheader {
+			font-family: 'Just Me Again Down Here', cursive;
+			line-height: 3rem;
+			text-align: center;
+			font-size: 28pt;
+			letter-spacing: 2px;
+			margin-top: 60px;
+			/*border-bottom: 1px dashed #111;*/
+		}
 
-        @media (min-width:961px)  {
-            #container{
-                width: 500px;
-            }
-        }
-    </style>
-
+		.box {
+			/*background-color: lightcoral;*/
+			width: 80%;
+			margin: 30px auto;
+			/*border-bottom: 1px dashed #111;*/
+			box-sizing: border-box;
+			padding: 10px;
+		}
+		.box-body p {
+			font-family: 'Just Me Again Down Here', cursive;
+			font-size: 20pt;
+			letter-spacing: 1px;
+			/*font-weight: bold;*/
+			margin-top: 40px;
+		}
+		h2 {
+			font-family: 'Just Me Again Down Here', cursive;
+			letter-spacing: 1px;
+			font-size: 23pt;
+			/*font-weight: bold;*/
+			margin-bottom: 10px;
+			/*border-bottom: 1px solid #111;*/
+		}
+		footer {
+			/*position: absolute;*/
+			background-color: #111;
+			color: #f9f9f9;
+			font-family: sans-serif;
+			font-size: 8pt;
+			box-sizing: border-box;
+			/*border-top: 1px dashed #f9f9f9;*/
+			padding: 10px;
+			bottom: 0;
+			line-height: 1rem;
+			text-align: center;
+		}
+		hr {
+			width: 80%;
+			margin: 0 auto;
+		}
+	</style>
 </head>
-
 <body>
-    <div id="container">
-        <nav>
-            <a id="a" class="selected">A</a> \
-            <a id="b">Be</a> \
-            <a id="c">Ce</a>
-        </nav>
+	<div class="container">
+		<header>NABILAFIKRI</header>
+			<!-- <div class="subheader">Selamat datang kawan,<br> semoga kau senang!<br> :D</div> -->
+		<div class="content">
+			
+			<div id="app">
+			</div>
+		</div>
+		<footer>Copyrights &copy; 2021 Nabila Fikri. <br>Made with ❤️</footer>
+	</div>
 
-        <div id="content">
-            <h1>Under Construction!!</h1><br>
-            <!-- <p>Aku Nabila Fikri. Nama pemberian Orang Tua yang dicatat dalam dokumen resmi pencatatan sipil. Lahir 24 tahun yang lalu. Suka dengan dunia pemrograman tapi lebih suka kamu. Ok. Selamat datang dalam duniaku!</p> -->
-        </div>
-    </div>
+	<script type="text/javascript" src="data.json"></script>
+	<script>
 
-    <script type="text/javascript">
-        function push(event) {
-            console.log('sd')
-            // let id = event.target.id;
-            // window.history.pushState({id}, '${id}', '/page/${id}');
-        }
-        window.onload = event => {
-            document.getElementById('a').addEventListener('click', () => {
-                event => push(event)
-            })
-        }
-    </script>
+		var html = "";
+
+		if (maintenance) {
+			let sorted = data.slice().sort((a, b) => b.id - a.id);
+			sorted.forEach( (res) => {
+				// console.log(res.title)
+				if (res.hidden === true) {
+					html += '<div class="box">'+
+								'<h2>'+ res.title +'</h2>'+
+								'<div class="box-body">'+
+									'<p>'+ res.body +'</p>'+
+								'</div>'+
+							'</div><hr>';
+				}
+			})
+		} else {
+			html = message.maintenance
+		}
+		document.getElementById('app').innerHTML = html
+	</script>
 </body>
-
 </html>
