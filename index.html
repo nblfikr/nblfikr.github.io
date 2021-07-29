@@ -71,8 +71,8 @@
 			padding: 10px;
 		}
 		.box-body p {
-			font-family: 'Just Me Again Down Here', cursive;
-			font-size: 20pt;
+			font-family: 'Consolas', cursive;
+			font-size: 11pt;
 			letter-spacing: 1px;
 			/*font-weight: bold;*/
 			margin-top: 40px;
@@ -80,7 +80,7 @@
 		h2 {
 			font-family: 'Just Me Again Down Here', cursive;
 			letter-spacing: 1px;
-			font-size: 23pt;
+			font-size: 16pt;
 			/*font-weight: bold;*/
 			margin-bottom: 10px;
 			/*border-bottom: 1px solid #111;*/
@@ -117,7 +117,42 @@
 	</div>
 
 	<script type="text/javascript" src="data.json"></script>
+	<script type="text/javascript" src="routes.json"></script>
 	<script>
+
+		// /**
+		//   * @param {String} url - address for the HTML to fetch
+		//   * @return {String} the resulting HTML string fragment
+		//   */
+		// async function fetchHtmlAsText(url) {
+		//     return await (await fetch(url)).text();
+		// }
+
+		// // this is your `load_home() function`
+		// async function load(url) {
+		//     const app = document.getElementById("app");
+		//     app.innerHTML = await fetchHtmlAsText(url);
+		// }
+
+		// function route(pathname='/', type='onload') {
+		// 	if (type === 'click') {
+		// 		pathname = window.location.pathname
+		// 	}
+		
+		// 	routes.forEach( res => {
+		// 	// alert()
+		// 		if (pathname == res.pathname) {
+		// 			var url = 'http://127.0.0.1:8080/content/' + res.file
+
+		// 			load(url)
+		// 			return false
+		// 		}
+		// 	})
+		// }
+
+		// window.onload = () => {
+		// 	route()
+		// }
 
 		var html = "";
 
@@ -139,5 +174,10 @@
 		}
 		document.getElementById('app').innerHTML = html
 	</script>
+	<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
 </body>
 </html>

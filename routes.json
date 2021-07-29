@@ -1,0 +1,10 @@
+routes = [
+	{
+		"pathname": "/",
+		"file": "home.html"
+	},
+	{
+		"pathname": "/content",
+		"file": "content.html"
+	}
+]
