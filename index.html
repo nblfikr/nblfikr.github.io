@@ -17,81 +17,60 @@
 			padding: 0;
 		}
 
+		body {
+			background-color: #f9f9f9;
+			padding-top: 20px;
+		}
 
 		.container {
 			width: 100%;
-			background-color: #f9f9f9;
+			padding: 40px;
+			box-sizing: border-box;
 		}
 		@media only screen and (min-width: 768px) {
+			body {
+				padding-top: 100px;
+			}
 			.container {
 				width: 40%;
 				margin: 0 auto;
 			}
 		}
 
-		header {
-			position: fixed;
-			top: 0;
-			font-family: 'Bebas Neue', cursive;
-			height: 40px;
-			width: 100%;
-			line-height: 2.9rem;
-			font-size: 32px;
-			line-spacing: 1px;
-			background-color: #b20b26;
-			color: #f9f9f9;
-			text-align: center;
-		}
-		@media only screen and (min-width: 768px) {
-			header {
-				width: 40%;
-			}
-		}
-
 		.content {
-			/*height: 1200px;*/
-			margin-top: 40px;
+
+		}
+		.content h5 {
+			font-size: 40px;
+		}
+		.content p {
+			margin-top: 20px;
+			font-size: 14pt;
 		}
 
-		.subheader {
-			font-family: 'Just Me Again Down Here', cursive;
-			line-height: 3rem;
-			text-align: center;
-			font-size: 28pt;
-			letter-spacing: 2px;
-			margin-top: 60px;
-			/*border-bottom: 1px dashed #111;*/
-		}
-
-		.box {
-			/*background-color: lightcoral;*/
-			width: 80%;
-			margin: 30px auto;
-			/*border-bottom: 1px dashed #111;*/
-			box-sizing: border-box;
+		.menu {
+			/*background-color: green;*/
+			margin-top: 30px;
 			padding: 10px;
+			text-align: center;
+			border-bottom: 1px solid rgba(178,11,38,.5);
 		}
-		.box-body p {
-			font-family: 'Crimson Text', serif;
-			font-size: 12pt;
-			/*letter-spacing: 1px;*/
-			line-height: 1.8rem;
-			font-weight: 300;
-			margin-top: 10px;
-			text-align: justify;
+
+		.menu a {
+			text-decoration: none;
+			margin: 0 10px;
+			color: rgb(178,11,38);
+			font-weight: bold;
+			padding: 3px;
 		}
-		/*.box-body b {
-			font-weight: 500;
+
+/*		.menu a:hover {
+			pointer-events: none;
+			color: #f9f9f9;
+			padding: 3px;
+			background-color: rgba(178,11,38,.5);
 		}*/
-		h2 {
-			font-family: 'Bebas Neue', cursive;
-			letter-spacing: 1px;
-			font-size: 19pt;
-			/*text-align: center;*/
-			/*font-weight: bold;*/
-			margin-top: 15px;
-			/*border-bottom: 1px solid #111;*/
-		}
+
 		footer {
 			/*position: absolute;*/
 			background-color: #f9f9f9;
@@ -105,86 +84,20 @@
 			line-height: 1rem;
 			text-align: center;
 		}
-		hr {
-			width: 80%;
-			margin: 0 auto;
-		}
 	</style>
 </head>
 <body>
 	<div class="container">
-		<header>NABILA FIKRI</header>
-			<!-- <div class="subheader">Selamat datang kawan,<br> semoga kau senang!<br> :D</div> -->
 		<div class="content">
-			
-			<div id="app">
-			</div>
+			<h5>Hi.</h5>
+			<p>Kapan kalian terakhir kali tertawa lepas selepas-lepasnya? Hmm.. Mari lakukan sekarang, <br><br>Tertawalah... <br>Tersenyumlah...<br><br> Buat dunia takluk dengan senyuman indah milikmu. Semoga harimu menyenangkan!</p>
+		</div>
+		<div class="menu">
+			<a href="/">Me!</a>/
+			<a href="/blog">Blog!</a>/
+			<a href="/">As Soon As Possible!</a>
 		</div>
 		<footer>Stay Healthy. Be Happy.</footer>
 	</div>
-
-	<script type="text/javascript" src="data.json"></script>
-	<!-- <script type="text/javascript" src="routes.json"></script> -->
-	<script>
-
-		// /**
-		//   * @param {String} url - address for the HTML to fetch
-		//   * @return {String} the resulting HTML string fragment
-		//   */
-		// async function fetchHtmlAsText(url) {
-		//     return await (await fetch(url)).text();
-		// }
-
-		// // this is your `load_home() function`
-		// async function load(url) {
-		//     const app = document.getElementById("app");
-		//     app.innerHTML = await fetchHtmlAsText(url);
-		// }
-
-		// function route(pathname='/', type='onload') {
-		// 	if (type === 'click') {
-		// 		pathname = window.location.pathname
-		// 	}
-		
-		// 	routes.forEach( res => {
-		// 	// alert()
-		// 		if (pathname == res.pathname) {
-		// 			var url = 'http://127.0.0.1:8080/content/' + res.file
-
-		// 			load(url)
-		// 			return false
-		// 		}
-		// 	})
-		// }
-
-		// window.onload = () => {
-		// 	route()
-		// }
-
-		var html = "";
-
-		if (maintenance) {
-			let sorted = data.slice().sort((a, b) => b.id - a.id);
-			sorted.forEach( (res) => {
-				// console.log(res.title)
-				if (res.hidden === true) {
-					html += '<div class="box">'+
-								'<h2>'+ res.title +'</h2>'+
-								'<div class="box-body">'+
-									'<p>'+ res.body +'</p>'+
-								'</div>'+
-							'</div><hr>';
-				}
-			})
-		} else {
-			html = message.maintenance
-		}
-		document.getElementById('app').innerHTML = html
-	</script>
-	<!-- <script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Paragraph changed.";
-}
-</script> -->
 </body>
 </html>

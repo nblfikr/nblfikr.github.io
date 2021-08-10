@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- <meta http-equiv="refresh" content="2"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#b20b26" />
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hi+Melody&family=Just+Me+Again+Down+Here&family=Reenie+Beanie&family=Sue+Ellen+Francisco&family=Roboto:wght@100;300;400;500;700;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hi+Melody&family=Just+Me+Again+Down+Here&family=Reenie+Beanie&family=Sue+Ellen+Francisco&family=Roboto:wght@100;300;400;500;700;900&family=Crimson+Text:wght@400;700&display=swap');
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: #f9f9f9;
+		}
+		.container {
+			width: 100%;
+			background-color: #f9f9f9;
+		}
+		@media only screen and (min-width: 768px) {
+			.container {
+				width: 40%;
+				margin: 0 auto;
+			}
+		}
+
+		header {
+			position: fixed;
+			top: 0;
+			font-family: 'Bebas Neue', cursive;
+			height: 40px;
+			width: 100%;
+			line-height: 2.9rem;
+			font-size: 32px;
+			line-spacing: 1px;
+			background-color: #b20b26;
+			text-align: center;
+		}
+		header a {
+			color: #f9f9f9;
+			text-decoration: none;
+		}
+		@media only screen and (min-width: 768px) {
+			header {
+				width: 40%;
+			}
+		}
+
+		.content {
+			/*height: 1200px;*/
+			margin-top: 40px;
+		}
+
+		.subheader {
+			font-family: 'Just Me Again Down Here', cursive;
+			line-height: 3rem;
+			text-align: center;
+			font-size: 28pt;
+			letter-spacing: 2px;
+			margin-top: 60px;
+			/*border-bottom: 1px dashed #111;*/
+		}
+
+		.box {
+			/*background-color: lightcoral;*/
+			width: 80%;
+			margin: 30px auto;
+			/*border-bottom: 1px dashed #111;*/
+			box-sizing: border-box;
+			padding: 10px;
+		}
+		.box-body p {
+			font-family: 'Crimson Text', serif;
+			font-size: 12pt;
+			/*letter-spacing: 1px;*/
+			line-height: 1.8rem;
+			font-weight: 300;
+			margin-top: 10px;
+			text-align: justify;
+		}
+		/*.box-body b {
+			font-weight: 500;
+		}*/
+		h2 {
+			font-family: 'Bebas Neue', cursive;
+			letter-spacing: 1px;
+			font-size: 19pt;
+			/*text-align: center;*/
+			/*font-weight: bold;*/
+			margin-top: 15px;
+			/*border-bottom: 1px solid #111;*/
+		}
+		footer {
+			/*position: absolute;*/
+			background-color: #f9f9f9;
+			color: #b20b26;
+			font-family: sans-serif;
+			font-size: 8pt;
+			box-sizing: border-box;
+			/*border-top: 1px dashed #f9f9f9;*/
+			padding: 10px 10px 30px;
+			bottom: 0;
+			line-height: 1rem;
+			text-align: center;
+		}
+		hr {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+
+		/*DAFTAR ISI*/
+		.title-daftar-isi {
+			/*font-family: 'Crimson Text', serif;*/
+			text-transform: uppercase;
+			/*letter-spacing: .1rem;*/
+			font-size: 12pt;
+			color: #b20b26;
+		}
+		.box-body-daftar-isi p{
+			text-align: left;
+		}
+		.box-body-daftar-isi p span {
+			font-weight: bold;
+			margin-right: 10px;
+		}
+		.box-body-daftar-isi p a {
+			color: #000;
+			text-decoration: none;
+		}
+		.box-body-daftar-isi p a:hover {
+			color: #b20b26;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header><a href="/">NABILAFIKRI</a></header>
+			<!-- <div class="subheader">Selamat datang kawan,<br> semoga kau senang!<br> :D</div> -->
+		<div class="content">
+			
+			<div id="app">
+				<!-- <div class="box">
+					<h2 class="title-daftar-isi">Pilih satu saja jangan kebanyakan!</h2>
+					<div class="box-body box-body-daftar-isi">
+						<p><span>#10</span> <a href="/blog/index.html?id=1">Bubur Ayam</a></p>
+						<p><span>#9</span> <a href="/blog/index.html?id=1">Siap gak siap</a></p>
+						<p><span>#8</span> <a href="/blog/index.html?id=1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></p>
+						<p><span>#7</span> <a href="/blog/index.html?id=1">Siap gak siap</a></p>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<footer>Stay Healthy. Be Happy.</footer>
+	</div>
+
+	<script>
+		const init = () => {
+			var html = "";
+			var params = window.location.search
+			if (params !== "") {
+				const urlSearchParams = new URLSearchParams(window.location.search);
+				const params = Object.fromEntries(urlSearchParams.entries());
+				const origin = window.location.origin + '/blog'
+				fetch(origin + '/data.json', {
+		      headers : { 
+		        'Content-Type': 'application/json',
+		        // 'Accept': 'application/json'
+		       }
+
+		    })
+			  .then(response => response.json())
+			  .then((data) => {
+			  	var data = data.data
+			  	data.forEach(res => {
+			  		if (res.id === parseInt(params.id)) {
+			  		console.log(params.id)
+				  		html += '<div class="box">'+
+										'<h2>'+ res.title +'</h2>'+
+										'<div class="box-body">'+
+											'<p>'+ res.body +'</p>'+
+										'</div>'+
+									'</div><hr>';
+			  		}
+			  	})
+					document.getElementById('app').innerHTML = html
+			  })
+			  .catch(err => console.log(err));
+
+			}
+
+			// DAFTAR ISI
+			else {
+				// const origin = window.location.origin + '/blog'
+				const origin = window.location.origin
+				fetch(origin + '/blog/data.json', {
+		      headers : { 
+		        'Content-Type': 'application/json',
+		        // 'Accept': 'application/json'
+		       }
+
+		    })
+			  .then(response => response.json())
+			  .then((data) => {
+			  	var data = data.data
+			  	data.sort((a,b) => b.id - a.id)
+			  	// console.log(data.sort((a,b) => b.id - a.id))
+
+			  	html += "<div class=\"box\">" +
+						"<h2 class=\"title-daftar-isi\">Pilih satu aja jangan kebanyakan!</h2>" +
+						"<div class=\"box-body box-body-daftar-isi\">";
+
+			  	data.forEach(res => {
+			  		html += "<p><span>#"+res.id+"</span> <a href=\"/blog/index.html?id="+res.id+"\">"+res.title+"</a></p>";
+			  	})
+					html += "</div></div>";
+					document.getElementById('app').innerHTML = html
+			  })
+			  .catch(err => console.log(err));
+			}
+		}
+
+		init()
+	</script>
+</body>
+</html>
